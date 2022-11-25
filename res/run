@@ -1,0 +1,5 @@
+month=$(date +%m)
+day=$(date +%F)
+vim ./$month/$day
+base64 ./$month/$day >>./$month/$day.out
+cat ./$month/$day.out >../vmess.txt
