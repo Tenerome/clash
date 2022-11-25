@@ -3,5 +3,5 @@ day=$(date +%F)
 vim ./$month/$day
 base64 ./$month/$day| sed ':t;N;s/\n//;b t' >./$month/$day.out
 cat ./$month/$day.out >../vmess.txt
-git commit ./$month/$day ./$month/$day.out -m $day
+git commit ./$month/$day ./$month/$day.out ../vmess.txt -m $day
 git push
