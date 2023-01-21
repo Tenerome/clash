@@ -1,11 +1,13 @@
 month=$(date +%y-%m)
 day=$(date +%F)
-if [ -e ./$month/ ]
+if [ -e ./$month/ ]#添加月份目录
     then echo 
 else
     mkdir ./$month/
 fi
-vim ./$month/$day
+# vim ./$month/$day
+# 更新，使用xsel获取剪贴板的内容，不用再手动粘贴
+xsel -o -b >> ./$month/$day
 base64 ./$month/$day| sed ':t;N;s/\n//;b t' >./$month/$day.out
 cat ./$month/$day.out >../vmess.txt
 git add ./$month/$day ./$month/$day.out ../vmess.txt
