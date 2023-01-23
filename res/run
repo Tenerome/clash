@@ -1,6 +1,6 @@
 month=$(date +%y-%m)
 day=$(date +%F)
-if [ -e ./$month/ ]#添加月份目录
+if [ -e ./$month/ ]
     then echo 
 else
     mkdir ./$month/
